@@ -41,7 +41,7 @@
                     <p>
                     <small>For more info:<a href="https://libreant.readthedocs.org/en/latest/">libreant.rtfd.org</a></small>
                     </p>
-                    <img src="img/logo.svg" alt="Logo" style="border-width:0">
+                    <img src="img/logo_black.png" alt="Logo" style="border-width:0; width:35%; background-color: transparent; box-shadow:0 0 0px">
                 </section>
 
                 <section>
@@ -64,7 +64,7 @@
                         <h4>Needs</h4>
                         <p>
                         In the Sapienza squat we contributed to the beginning of a project, called <em>Proprietà Pirata</em>. The goal was
-                        to overcome the limits imposed by the copyright enforcement, primarly inside the university classes.
+                        to overcome the limits imposed by the copyright enforcement, primarily inside the university classes.
                         We realized that a lot of infoshops and in self-organized places (autonomous libraries, etc.) would benefit from
                         an <u>easy-to-use and federative software</u>.
                         </p>
@@ -79,12 +79,9 @@
                         <ul>
                             <li class="fragment"><b>Calibre</b><br/><small>desktop application, not suited for web managing</small></li>
                             <li class="fragment"><b>Colibrì</b><br/> <small>not ready at the time</small></li>
-                            <li class="fragment"><b>PeerLibrary</b><br/> <small>designed specifically for academic paper</small></li>
+                            <li class="fragment"><b>PeerLibrary</b><br/> <small>designed specifically for academic papers</small></li>
                         </ul>
                     </section>
-                    <aside class="notes">
-                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-                    </aside>
                 </section>
 
                 <section>
@@ -92,14 +89,96 @@
                         <h2>Reinventing the wheel</h2>
                         <h4>Libreant features</h4>
                         <ul>
-                            <li class="fragment"><b>Node aggregator</b></li>
-                            <li class="fragment"><b>webapp</b></li>
-                            <li class="fragment"><b>Easy-to-use and customizable</b></li>
+                            <li class="fragment"><b>Node aggregator</b><br/><small>Give the possibility for some nodes to browse each other</small></li>
+                            <li class="fragment"><b>webapp</b><br/><small>The interface, both for user and admin</small></li>
+                            <li class="fragment"><b>Easy-to-use and customizable</b><br/><small></small></li>
                         </ul>
                     </section>
                     <section>
-                    
-
+                        <h2>Architecture</h2>
+                        <h4>Tools</h4>
+                        <ul>
+                            <li class="fragment"><b>Language</b>:   python</li>
+                            <li class="fragment"><b>Database</b>:  elasticsearch + fsdb</li>
+                            <li class="fragment"><b>web framework</b>:  Flask</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>How we built it</h4>
+                        <ul>
+                            <li><a href=./index.html#/3/3>Agherant</a> (aggregator)</li>
+                            <li><a href=./index.html#/3/4>Preset/Templating</a></li>
+                            <li><a href=./index.html#/3/5>Full text search (ES)</a></li>
+                            <li><a href=./index.html#/3/6>Localization</a></li>
+                            <li><a href=./index.html#/3/7>REST API</a></li>
+                            <li><a href=./index.html#/3/8>CLI</a></li>
+                            <li><a href=./index.html#/3/9>Modularity</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Agherant</h4>
+                        <p>Pretty self-explanatory<br/>
+                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
+                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Preset/Templating</h4>
+                      <pre style="padding:0px">
+                            <code data-trim contenteditable class="hljs json"> {   "id":"book",
+    "description":"simple book",
+    "properties": [{ "id": "category",
+                     "description": "book format",
+                     "required": true,
+                     "type": "enum",
+                     "values": ["scientific","novel","children"]
+                   },
+                   { "id": "title",
+                     "description": "a required property",
+                     "required": true
+                   },
+                   { "id": "actors", 
+                     "description":"people who contributed to the creation of the work" 
+                   }],
+    "allow_upload": true} </code>
+                        </pre>
+                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Full text search</h4>
+                        <p>Let's try it! <p>
+                        <small><a href=./index.html#/3/2>Back</a></small></p>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Localization</h4>
+                        <p>The html skeleton of the pages and the items allow for localization</p>
+                        <p class="fragment"></p>
+                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Agherant</h4>
+                        <p>Pretty self-explanatory<br/>
+                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
+                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Agherant</h4>
+                        <p>Pretty self-explanatory<br/>
+                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
+                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                    </section>
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Agherant</h4>
+                        <p>Pretty self-explanatory<br/>
+                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
+                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
                     </section>
                 </section>
 
