@@ -13,7 +13,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
         <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -92,8 +92,9 @@
                             <li class="fragment"><b>Node aggregator</b><br/><small>Give the possibility for some nodes to browse each other</small></li>
                             <li class="fragment"><b>webapp</b><br/><small>The interface, both for user and admin</small></li>
                             <li class="fragment"><b>Easy-to-use and customizable</b><br/><small></small></li>
-                        </ul>
+                            </ul>
                     </section>
+
                     <section>
                         <h2>Architecture</h2>
                         <h4>Tools</h4>
@@ -103,31 +104,35 @@
                             <li class="fragment"><b>web framework</b>:  Flask</li>
                         </ul>
                     </section>
+
                     <section>
                         <h2>Architecture</h2>
                         <h4>How we built it</h4>
                         <ul>
-                            <li><a href=./index.html#/3/3>Agherant</a> (aggregator)</li>
-                            <li><a href=./index.html#/3/4>Preset/Templating</a></li>
-                            <li><a href=./index.html#/3/5>Full text search (ES)</a></li>
-                            <li><a href=./index.html#/3/6>Localization</a></li>
-                            <li><a href=./index.html#/3/7>REST API</a></li>
-                            <li><a href=./index.html#/3/8>CLI</a></li>
-                            <li><a href=./index.html#/3/9>Modularity</a></li>
+                            <li><a href=./index.html#/2/3>Agherant</a> (aggregator)</li>
+                            <li><a href=./index.html#/2/4>Preset/Templating</a></li>
+                            <li><a href=./index.html#/2/5>Full text search (ES)</a></li>
+                            <li><a href=./index.html#/2/6>Localization</a></li>
+                            <li><a href=./index.html#/2/7>REST API</a></li>
+                            <li><a href=./index.html#/2/8>CLI</a></li>
+                            <li><a href=./index.html#/2/9>Modularity</a></li>
                         </ul>
                     </section>
+
                     <section>
                         <h2>Architecture</h2>
                         <h4>Agherant</h4>
                         <p>Pretty self-explanatory<br/>
                         <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
-                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                        <p><small><a href=./index.html#/2/2>Back</a></small></p>
                     </section>
-                    <section>
-                        <h2>Architecture</h2>
-                        <h4>Preset/Templating</h4>
-                      <pre style="padding:0px">
-                            <code data-trim contenteditable class="hljs json"> {   "id":"book",
+
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Architecture
+                        #### Preset/Templating
+```json
+   {"id":"book",
     "description":"simple book",
     "properties": [{ "id": "category",
                      "description": "book format",
@@ -139,52 +144,116 @@
                      "description": "a required property",
                      "required": true
                    },
-                   { "id": "actors", 
+                   { "id": "actors",
                      "description":"people who contributed to the creation of the work" 
                    }],
-    "allow_upload": true} </code>
-                        </pre>
-                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+    "allow_upload": true}
+```
+                        [Back](./index.html#/2/2)
+                        </script>
+
                     </section>
+
                     <section>
                         <h2>Architecture</h2>
                         <h4>Full text search</h4>
                         <p>Let's try it! <p>
-                        <small><a href=./index.html#/3/2>Back</a></small></p>
+                        <small><a href=./index.html#/2/2>Back</a></small></p>
                     </section>
+
                     <section>
                         <h2>Architecture</h2>
                         <h4>Localization</h4>
-                        <p>The html skeleton of the pages and the items allow for localization</p>
-                        <p class="fragment">The html skeletons make use of Jinja blocks for Babel</p>
-                        <pre class="fragment"><code class="hljs html">
-            {%trans%}Sorry, no books matching your query{%endtrans%}
+                        <p>We use Babel to allow for localization.</p>
+                        <p>An example can be looked in the html skeletons</p>
+                        <pre><code class="hljs html">
+        {%trans%}Sorry, no books matching your query{%endtrans%}
                         </code></pre>
-                        <p class="fragment">A mandatory field in the json element that identifies an item is the language of the item</p>
-                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                        <p><small><a href=./index.html#/2/2>Back</a></small></p>
                     </section>
-                    <section>
-                        <h2>Architecture</h2>
-                        <h4>REST API</h4>
-                        <p>Pretty self-explanatory<br/>
-                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
-                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                        ## Architecture
+                        #### REST API
+```
+GET   /api/v1/volumes/<volume-id>
+GET   /api/v1/volumes/?q=staceppademinchia&size=2&from=5
+POST  /api/v1/volumes/
+PUT   /api/v1/volumes/<volume-id>/attachments/<attachments-id>
+GET   /api/v1/volumes/<volume-id-id>/attachments/<attachments-id>/file
+```
+                        #### [Back](./index.html#/2/2)
+                        </script>
                     </section>
+
                     <section>
                         <h2>Architecture</h2>
                         <h4>CLI</h4>
-                        <p>Pretty self-explanatory<br/>
-                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
-                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                        <pre><code class="hljs bash">
+Usage: libreant [OPTIONS]
+
+  launch libreant daemon
+
+Options:
+  --version                       Show the version and exit.
+  -s, --settings <path>           file from wich load settings
+  -d, --debug                     operate in debug mode
+  -p, --port <port>               port on which daemon will listen
+  --address <address>             address on which daemon will listen
+  --fsdb-path <path>              path used for storing binary file
+  --es-indexname <name>           index name to use for elasticsearch
+  --es-hosts <host>..             list of elasticsearch nodes to connect to
+  --preset-paths <path>..         list of paths where to look for presets
+  --agherant-descriptions <url>..
+                                  list of description urls of nodes to
+                                  aggregate
+  --help                          Show this message and exit.
+                        </code></pre>
+                        <p><small><a href=./index.html#/2/2>Back</a></small></p>
                     </section>
+
                     <section>
                         <h2>Architecture</h2>
                         <h4>Modularity</h4>
-                        <p>By design, it is feasible to substitute, for example, the storing database.</p>
-                        <p><small><a href=./index.html#/3/2>Back</a></small></p>
+                        <p>We designed libreant to be:</p>
+                            <ul>
+                                <li>Modular</li>
+                                <li>Easy to read</li>
+                                <li>Hackable</li>
+                            </ul>
+                        <p><small><a href=./index.html#/2/2>Back</a></small></p>
                     </section>
                 </section>
 
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## The code
+                            #### Fork me on github
+
+                            Easy as a fork
+
+                            ```
+        git clone https://github.com/insomnia-lab/libreant
+                            ```
+                        </script>
+                    </section>
+
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Read the docs!
+
+                            We have been trying also to document appropriately the code!
+
+                            [libreant.rtfd.org](http://libreant.rtfd.org)
+                        </script>
+                    </section>
+
+                    <section>
+                        <h1 style="padding-top: 150px">THANKS</h1>
+                    </section>
+                </section>
             </div>
 
         </div>
