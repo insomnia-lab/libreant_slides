@@ -54,7 +54,7 @@
                         </p>
                         <br/>
                         <p class="fragment">
-                        <code>Insomnialab</code> is now two years old and is now located inside the walls of Forte Prenestino,
+                        <code class="python">Insomnialab</code> is now two years old and is currently located inside the walls of Forte Prenestino,
                         after the eviction of the squat.
                         </p>
                     </section>
@@ -156,28 +156,31 @@
                         <h2>Architecture</h2>
                         <h4>Localization</h4>
                         <p>The html skeleton of the pages and the items allow for localization</p>
-                        <p class="fragment"></p>
+                        <p class="fragment">The html skeletons make use of Jinja blocks for Babel</p>
+                        <pre class="fragment"><code class="hljs html">
+            {%trans%}Sorry, no books matching your query{%endtrans%}
+                        </code></pre>
+                        <p class="fragment">A mandatory field in the json element that identifies an item is the language of the item</p>
                         <p><small><a href=./index.html#/3/2>Back</a></small></p>
                     </section>
                     <section>
                         <h2>Architecture</h2>
-                        <h4>Agherant</h4>
+                        <h4>REST API</h4>
                         <p>Pretty self-explanatory<br/>
                         <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
                         <p><small><a href=./index.html#/3/2>Back</a></small></p>
                     </section>
                     <section>
                         <h2>Architecture</h2>
-                        <h4>Agherant</h4>
+                        <h4>CLI</h4>
                         <p>Pretty self-explanatory<br/>
                         <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
                         <p><small><a href=./index.html#/3/2>Back</a></small></p>
                     </section>
                     <section>
                         <h2>Architecture</h2>
-                        <h4>Agherant</h4>
-                        <p>Pretty self-explanatory<br/>
-                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
+                        <h4>Modularity</h4>
+                        <p>By design, it is feasible to substitute, for example, the storing database.</p>
                         <p><small><a href=./index.html#/3/2>Back</a></small></p>
                     </section>
                 </section>
