@@ -91,7 +91,7 @@
                         <ul>
                             <li class="fragment"><b>The open-source aimed to open-content</b><br/><small>Collaborative development</small></li>
                             <li class="fragment"><b>Easy and universal access</b><br/><small>Responsive interface, both for user and admin</small></li>
-                            <li class="fragment"><b>Completely customizable</b><br/><small>As few assumption as possible were made</small></li>
+                            <li class="fragment"><b>Completely customizable</b><br/><small>Has been made As few assumption as possible were made</small></li>
                             <li class="fragment"><b>Quick install and ready to use</b><br/><small></small></li>
                         </ul>
                     </section>
@@ -110,22 +110,25 @@
                         <h2>Architecture</h2>
                         <h4>How we built it</h4>
                         <ul>
-                            <li><a href=./index.html#/2/3>Agherant</a> (aggregator)</li>
-                            <li><a href=./index.html#/2/4>Preset/Templating</a></li>
-                            <li><a href=./index.html#/2/5>Full text search (ES)</a></li>
-                            <li><a href=./index.html#/2/6>Localization</a></li>
-                            <li><a href=./index.html#/2/7>REST API</a></li>
-                            <li><a href=./index.html#/2/8>CLI</a></li>
-                            <li><a href=./index.html#/2/9>Modularity</a></li>
+                            <li>Preset/Templating</a></li>
+                            <li>Users and groups</a></li>
+                            <li>Localization</a></li>
+                            <li>Three way interaction</a></li>
+                            <li>Full text search (ES)</a></li>
                         </ul>
                     </section>
 
+
                     <section>
                         <h2>Architecture</h2>
-                        <h4>Agherant</h4>
-                        <p>Pretty self-explanatory<br/>
-                        <img src="img/graph.png" alt="a mesh graph" style="width:40%"></p>
-                        <p><small><a href=./index.html#/2/2>Back</a></small></p>
+                        <h4>Preset/Templating</h4>
+                        <p>Completely free database structure make possible to use libreant for
+                           different archive types.
+                        <p>
+                        <p>
+                           However the librarian can use the preset approach to
+                           define some standard informations.
+                        </p>
                     </section>
 
                     <section data-markdown>
@@ -146,7 +149,7 @@
                      "required": true
                    },
                    { "id": "actors",
-                     "description":"people who contributed to the creation of the work" 
+                     "description":"people who contributed to the creation of the work"
                    }],
     "allow_upload": true}
 ```
@@ -155,11 +158,17 @@
 
                     </section>
 
+
                     <section>
                         <h2>Architecture</h2>
-                        <h4>Full text search</h4>
-                        <p>Let's try it! <p>
-                        <small><a href=./index.html#/2/2>Back</a></small></p>
+                        <h4>Users and groups</h4>
+                        <p>It is possible to manage users and define groups
+                           level capabilities in order to make some area/operations
+                           restricted to a smaller group of person.
+                        </p>
+                        <br/>
+                        <p>Can everyone add/upload books to your library?</p>
+                        <p>There is someone that is taking care of reviewing new entries?</p>
                     </section>
 
                     <section>
@@ -171,6 +180,17 @@
         {%trans%}Sorry, no books matching your query{%endtrans%}
                         </code></pre>
                         <p><small><a href=./index.html#/2/2>Back</a></small></p>
+                    </section>
+
+
+                    <section>
+                        <h2>Architecture</h2>
+                        <h4>Three way interaction</h4>
+                        <ul>
+                            <li>Web Interface</li>
+                            <li>Command line Interface</li>
+                            <li>REST API</li>
+                        </ul>
                     </section>
 
                     <section data-markdown>
@@ -217,18 +237,13 @@ Options:
                         <p><small><a href=./index.html#/2/2>Back</a></small></p>
                     </section>
 
+                </section>
+
                     <section>
                         <h2>Architecture</h2>
-                        <h4>Modularity</h4>
-                        <p>We designed libreant to be:</p>
-                            <ul>
-                                <li>Modular</li>
-                                <li>Easy to read</li>
-                                <li>Hackable</li>
-                            </ul>
-                        <p><small><a href=./index.html#/2/2>Back</a></small></p>
+                        <h4>Full text search</h4>
+                        <p>Let's try it! <p>
                     </section>
-                </section>
 
                 <section>
                     <section data-markdown>
