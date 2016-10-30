@@ -49,35 +49,45 @@
                         <h2>Background</h2>
                         <h4>Insomnialab birth</h4>
                         <p>
-                        Two years ago some people began to meet in Rome, in a local squat, inside Sapienza university.
+                        2013: some people began to meet in Rome, in a local squat, inside Sapienza University.
                         There were exciting times and a new hacker space was born.
-                        </p>
-                        <br/>
-                        <p class="fragment">
-                        <code class="python">Insomnialab</code> is now two years old and is currently located inside the walls of Forte Prenestino,
-                        after the eviction of the squat.
-                        </p>
+                        </p><br/>
+                        <p>2015:
+                        <code class="python">InsomniaLab</code> moves in CSOA Forte Prenestino, after the
+                        eviction of the squat.
+                        </p><br/>
+                        <p>2016: AvANa and InsomniaLab merged</p>
                     </section>
 
                     <section>
                         <h2>Background</h2>
                         <h4>Needs</h4>
                         <p>
-                        In the Sapienza squat we contributed to the beginning of a project, called <em>Proprietà Pirata</em>. The goal was
-                        to overcome the limits imposed by the copyright enforcement, primarily inside the university classes.
-                        We realized that a lot of infoshops and in self-organized places (autonomous libraries, etc.) would benefit from
+                        In the University squat we contributed to the beginning of a project, called
+                        <em>Proprietà Pirata</em>.
+                        </p><p>
+                        <strong>Goal:</strong> overcome the limits imposed by the copyright enforcement, primarily inside university classes.
+                        </p><p>
+                        <strong>How?</strong> free sharing of digitized books inside a physical
+                        space
+                        </p><p>
+                        <strong>How to improve?</strong>
                         an <u>easy-to-use and federative software</u>.
+                        for infoshops and self-organized places (autonomous libraries, etc.)
+                        </p>
+                        <p class="fragment">
+                        Places we want to support: <ul>
+                            <li>InfoShops</li>, self-managed libraries. Mostly paper books.
+                            <li>Pirate Sharing</li>, huge archives of digital books
+                        </ul>
                         </p>
                     </section>
 
                     <section>
                         <h2>Background</h2>
                         <h4>Existing software</h4>
-                        <p>
-                        We realized that there existed some FOSS solution:
-                        </p>
                         <ul>
-                            <li class="fragment"><b>Calibre</b><br/><small>desktop application, not suited for web managing</small></li>
+                            <li class="fragment"><b>Calibre</b><br/><small>desktop application, not well-suited for web managing</small></li>
                             <li class="fragment"><b>Colibrì</b><br/> <small>not ready at the time</small></li>
                             <li class="fragment"><b>PeerLibrary</b><br/> <small>designed specifically for academic papers</small></li>
                         </ul>
@@ -89,9 +99,11 @@
                         <h2>Reinventing the wheel</h2>
                         <h4>Libreant features</h4>
                         <ul>
-                            <li class="fragment"><b>The open-source aimed to open-content</b><br/><small>Collaborative development</small></li>
+                            <li class="fragment"><b>Easier</b><br/><small>Than most librarian software</small></li>
+                            <li class="fragment"><b>Completely customizable</b><br/><small>(a.k.a. no
+                                    disciplinary classification of knowledge). We made as few assumption as possible</small></li>
+                            <li class="fragment"><b>Free software for free books</b><br/><small>Collaborative development</small></li>
                             <li class="fragment"><b>Easy and universal access</b><br/><small>Responsive interface, both for user and admin</small></li>
-                            <li class="fragment"><b>Completely customizable</b><br/><small>Has been made As few assumption as possible were made</small></li>
                             <li class="fragment"><b>Quick install and ready to use</b><br/><small></small></li>
                         </ul>
                     </section>
@@ -100,9 +112,9 @@
                         <h2>Architecture</h2>
                         <h4>Tools</h4>
                         <ul>
-                            <li class="fragment"><b>Language</b>:   python</li>
-                            <li class="fragment"><b>Database</b>:  elasticsearch + fsdb</li>
-                            <li class="fragment"><b>web framework</b>:  Flask</li>
+                            <li class="fragment"><strong>Language</strong>:   python</li>
+                            <li class="fragment"><strong>Database</strong>:  elasticsearch + fsdb</li>
+                            <li class="fragment"><strong>web framework</strong>:  Flask</li>
                         </ul>
                     </section>
 
@@ -110,11 +122,10 @@
                         <h2>Architecture</h2>
                         <h4>How we built it</h4>
                         <ul>
-                            <li>Preset/Templating</a></li>
-                            <li>Users and groups</a></li>
-                            <li>Localization</a></li>
-                            <li>Three way interaction</a></li>
-                            <li>Full text search (ES)</a></li>
+                            <li>Preset/Templating: you define your data structure</li>
+                            <li>Multiple interfaces: Web, REST, Command line</li>
+                            <li>Full text search</li>
+                            <li>Users and groups</li>
                         </ul>
                     </section>
 
@@ -131,30 +142,31 @@
                         </p>
                     </section>
 
-                    <section data-markdown>
-                        <script type="text/template">
-                        ## Architecture
-                        #### Preset/Templating
-```json
-   {"id":"book",
-    "description":"simple book",
-    "properties": [{ "id": "category",
-                     "description": "book format",
-                     "required": true,
-                     "type": "enum",
-                     "values": ["scientific","novel","children"]
-                   },
-                   { "id": "title",
-                     "description": "a required property",
-                     "required": true
-                   },
-                   { "id": "actors",
-                     "description":"people who contributed to the creation of the work"
-                   }],
-    "allow_upload": true}
-```
-                        [Back](./index.html#/2/2)
-                        </script>
+                    <section>
+                        <h4> Preset/Templating</h4>
+                        <p>
+                        <pre><code data-trim >
+{"id":"narrative",
+"description":"narrative book",
+"properties": [{ "id": "category",
+                 "description": "book format",
+                 "required": true,
+                 "type": "enum",
+                 "values": ["scientific","novel","children"]
+               },
+               { "id": "title",
+                 "description": "a required property",
+                 "required": true
+               },
+               { "id": "actors",
+                 "description":"people who contributed to the creation of the work"
+               }],
+"allow_upload": true}
+                        </code></pre>
+                        </p>
+                        <p class="fragment">
+                        We describe a "narrative book" as title+actors+category
+                        </p>
 
                     </section>
 
@@ -218,17 +230,17 @@ Usage: libreant [OPTIONS]
 
 Options:
   --version                       Show the version and exit.
-  -s, --settings <path>           file from wich load settings
+  -s, --settings PATH           file from wich load settings
   -d, --debug                     operate in debug mode
-  -p, --port <port>               port on which daemon will listen
-  --address <address>             address on which daemon will listen
-  --fsdb-path <path>              path used for storing binary files
-  --es-indexname <name>           index name to use for elasticsearch
-  --es-hosts <host>..             list of elasticsearch nodes to connect to
-  --users-db <url>                url of the database used for users managment
-  --preset-paths <path>..         list of paths where to look for presets
+  -p, --port  PORT                port on which daemon will listen
+  --address  ADDRESS              address on which daemon will listen
+  --fsdb-path  PATH               path used for storing binary files
+  --es-indexname  NAME           index name to use for elasticsearch
+  --es-hosts  host...             list of elasticsearch nodes to connect to
+  --users-db  url                 url of the database used for users managment
+  --preset-paths  path...         list of paths where to look for presets
                                   definition
-  --agherant-descriptions <url>..
+  --agherant-descriptions  url...
                                   list of description urls of nodes to
                                   aggregate
   --dump-settings                 dump current settings and exit
